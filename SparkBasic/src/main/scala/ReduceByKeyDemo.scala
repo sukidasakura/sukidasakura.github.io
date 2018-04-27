@@ -3,6 +3,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 object ReduceByKeyDemo {
 	def main(args: Array[String]): Unit = {
 		val conf = new SparkConf().setMaster("local[2]").setAppName("ReduceByKeyDemo")
+				.set("spark.testing.memory", "2147480000")
 		val sc = new SparkContext(conf)
 		// def parallelize[T](seq: Seq[T], numSlices: Int = defaultParallelism)(implicit arg0: ClassTag[T]): RDD[T]
 		// - 第一个参数一是一个 Seq集合
