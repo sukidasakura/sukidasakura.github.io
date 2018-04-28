@@ -17,10 +17,5 @@ object ReduceByKeyDemo {
 		val y = x.reduceByKey((pre, after) => pre + after)
 		y.collect().foreach{println(_)}
 
-//		val words = "Mr.Li is my husband".split(" ")
-//		// 接下来，我们想要计算这些单词.
-//		val pairs = words.map(word => (word, 1))
-//		sc.parallelize(pairs).collect().foreach(println(_))
-
 	}
 }

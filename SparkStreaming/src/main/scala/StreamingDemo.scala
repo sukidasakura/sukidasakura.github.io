@@ -26,8 +26,14 @@ object StreamingDemo {
 		val pairs = words.map(word => (word, 1))
 		val wordCounts = pairs.reduceByKey(_ + _)
 		wordCounts.print()
-		ssc.start()
-		ssc.awaitTermination()
+		// 上一步的 words DStream 进行了进一步的映射（一对一的转换）为一个 (word, 1) paris 的离散流（DStream），
+		// 这个 DStream 然后被规约（reduce）来获得数据中每个批次（batch）的单词频率.
+		// 最后，wordCounts.print() 将会打印一些每秒生成的计数.
+
+		// 请注意，当这些行（lines）被执行的时候， Spark Streaming 仅仅设置了计算, 只有在启动时才会执行，并没有开始真正地处理.
+		// 为了在所有的转换都已经设置好之后开始处理，我们在最后调用:
+		ssc.start()                      // 开始计算
+		ssc.awaitTermination()     // 等待计算被中断
 	}
 
 

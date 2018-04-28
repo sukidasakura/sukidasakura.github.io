@@ -1,5 +1,11 @@
 ## Git基本命令
 
+#### 查看依赖
+    mvn dependency:tree
+    查看依赖中有scala的部分
+    mvn dependency:tree | grep scala
+
+
 #### 本地新建项目，推送到远程库
     1，在远程库建立同名的仓库
     2，git remote add origin git@github.com:sukidasakura/FtpTestUtil.git  
