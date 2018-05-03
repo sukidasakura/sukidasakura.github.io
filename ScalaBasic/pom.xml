@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ScalaDemo</artifactId>
+    <artifactId>scalabasic</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.scala-tools</groupId>
