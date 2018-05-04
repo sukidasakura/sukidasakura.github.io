@@ -29,7 +29,7 @@ object RddDemo {
         // 1, RDD创建，从数据集合中创建
         val dataRdd = sc.parallelize(1 to 5)
         // 累加
-        var dataSum = dataRdd.reduce((x, y) => x + y)
+        val dataSum = dataRdd.reduce((x, y) => x + y)
         // 遍历打印Rdd
         dataRdd.foreach(println)
         //输出总和
