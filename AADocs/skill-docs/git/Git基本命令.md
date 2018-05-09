@@ -1,5 +1,17 @@
 ## Git基本命令
 
+#### 查看不同
+git diff   比较文件
+git log -p   比较提交
+
+
+#### 使用Git下载指定分支
+
+git clone -b 分支名仓库地址
+使用Git下载v.2.8.1分支代码：
+git clone -b v2.8.1 https://git.oschina.net/oschina/android-app.git
+
+
 #### 查看依赖
     mvn dependency:tree
     查看依赖中有scala的部分
