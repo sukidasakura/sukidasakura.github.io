@@ -16,6 +16,7 @@
         <module>Drill</module>
         <module>SparkStreaming</module>
         <module>AADocs</module>
+        <module>SpringBasic</module>
     </modules>
     <!--<dependencies>
         <dependency>
