@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car" class="com.paris.dream.spring.bean.lifecircle.Car"/>
+    <bean id="boss" class="com.paris.dream.spring.bean.configuration.Boss">
+        <property name="car">
+            <!--boss的Bean通过<ref>元素引用car Bean, 建立起boss对car的依赖-->
+            <!--ref元素可以通过bean属性引用同一容器或父容器中的bean-->
+            <ref bean="car"></ref>
+        </property>
+    </bean>
+
+
+</beans>

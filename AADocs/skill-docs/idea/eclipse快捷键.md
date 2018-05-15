@@ -1,5 +1,8 @@
 ## Eclipse快捷键
 ```
+【Alt+←】、【Alt+→】 
+后退历史记录和前进历史记录，在跟踪代码时非常有用。
+
 alt+insert 插入getter和setter方法 
 在pom文件中使用快捷键alt+insert 添加依赖
  
