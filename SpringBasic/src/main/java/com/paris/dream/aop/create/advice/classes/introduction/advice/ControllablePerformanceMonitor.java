@@ -3,7 +3,6 @@ package com.paris.dream.aop.create.advice.classes.introduction.advice;
 import com.paris.dream.aop.first.example.noproxy.PerformanceMonitor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.aop.support.DelegatingIntroductionInterceptor;
-import scala.actors.threadpool.Perf;
 
 /**
  * 引介增强：不是在目标方法周围织入增强，而是为目标类创建新的方法和属性。
@@ -28,9 +27,12 @@ public class ControllablePerformanceMonitor
     public Object invoke(MethodInvocation mi) throws Throwable {
         Object obj = null;
         if (MonitorStatusMap.get() != null && MonitorStatusMap.get()){
+            // 拦截前
             PerformanceMonitor.begin(mi.getClass().getName() + "."
                     + mi.getMethod().getName());
+
             obj = super.invoke(mi);
+            //拦截后
             PerformanceMonitor.end();
         } else {
             obj = super.invoke(mi);
