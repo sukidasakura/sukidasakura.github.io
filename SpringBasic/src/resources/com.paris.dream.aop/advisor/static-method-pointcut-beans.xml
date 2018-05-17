@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置切面：静态方法匹配切面-->
+    <bean id="waiterTarget" class="com.paris.dream.aop.advisor.staticmethod.Waiter" />
+    <bean id="sellerTarget" class="com.paris.dream.aop.advisor.staticmethod.Seller" />
+    <bean id="greetingAdvice" class="com.paris.dream.aop.advisor.staticmethod.GreetingBeforeAdvice" />
+    <bean id="greetingAdvisor" class="com.paris.dream.aop.advisor.staticmethod.GreetingAdvisor"
+          p:advice-ref="greetingAdvice" /><!--向切面注入一个前置增强-->
+
+    <!--通过一个父bean定义公共的配置信息-->
+    <bean id="parent" abstract="true"
+          class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interceptorNames="greetingAdvisor"
+          p:proxyTargetClass="true" />
+    <!--waiter和seller有很多公共的配置信息，使用了一个父bean简化配置。
+    通过引用父bean轻松定义了两个织入切面的代理。-->
+    <bean id="waiter" parent="parent" p:target-ref="waiterTarget" /><!--waiter代理-->
+    <bean id="seller" parent="parent" p:target-ref="sellerTarget" /><!--seller代理-->
+
+</beans>
