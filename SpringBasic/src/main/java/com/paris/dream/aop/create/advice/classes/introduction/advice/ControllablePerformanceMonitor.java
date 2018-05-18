@@ -3,7 +3,6 @@ package com.paris.dream.aop.create.advice.classes.introduction.advice;
 import com.paris.dream.aop.first.example.noproxy.PerformanceMonitor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.aop.support.DelegatingIntroductionInterceptor;
-import scala.actors.threadpool.Perf;
 
 /**
  * 引介增强：不是在目标方法周围织入增强，而是为目标类创建新的方法和属性。

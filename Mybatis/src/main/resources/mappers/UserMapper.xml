@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace用于绑定Dao接口，即面向接口编程 -->
+<!-- 写成UserMapper时会报错：
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.paris.dream.dao.UserDao.selectUserById-->
+<mapper namespace="com.paris.dream.dao.UserDao">
+
+    <!-- 自定义返回结果集 -->
+    <!-- resultmap：描述如何从结果集中加载对象，主要作用是定义映射规则、级联的更新、定制类型转化器。-->
+    <!-- id：将结果集标记为id，以方便全局调用 -->
+    <!-- type：配置为返回的pojo类 --><!-- 否则报错：java.lang.IllegalStateException: Failed to load ApplicationContext -->
+
+
+    <resultMap id="userMap" type="com.paris.dream.pojo.User">
+        <id property="id" column="id" javaType="java.lang.Integer" />
+        <result property="username" column="username" javaType="java.lang.String"/>
+        <result property="password" column="password" javaType="java.lang.String"/>
+        <result property="account" column="account" javaType="java.lang.Double"/>
+    </resultMap>
+
+
+
+    <!-- 在各种标签中的id属性必须和接口中的方法名相同
+     id属性值必须是唯一的，不能够重复使用。
+     parameterType属性指明查询时使用的参数类型
+     resultType属性指明查询返回的结果集类型-->
+
+    <!--useGeneratedKeys：（仅对insert有用）
+    这会告诉MyBatis使用JDBC的getGeneratedKeys方法来取出由数据内部生成的主键。默认值：false。-->
+    <!--keyProperty：（仅对insert有用）
+    标记一个属性，MyBatis会通过getGeneratedKeys或者通过insert语句的selectKey子元素设置它的值。默认：不设置。-->
+
+    <!--#{}中的内容，为占位符，当参数为某个JavaBean时，表示放置该Bean对象的属性值-->
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        insert into user (username,password,account) values (#{username},#{password},#{account})
+    </insert>
+    <!--<insert id="insertUser" useGeneratedKeys="true" keyProperty="id">-->
+        <!--insert into _user (username,password,account) values (#{username},#{password},#{account})-->
+    <!--</insert>-->
+
+    <update id="updateUser" >
+        update user set username=#{username},password=#{password},account=#{account} where id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
+
+    <!-- 定义SQL输入映射类型,MyBatis通过OGNL从输入对象中获取参数传入SQL语句 -->
+    <!-- 定义SQL输出映射类型,MyBatis将SQL查询结果的一行记录映射为resultType指定的类型
+     要与本文件开头的resultMap id值一致, 当配置为com.paris.dream.pojo.User时，有如下报错：
+     org.apache.ibatis.builder.IncompleteElementException: Could not find result map com.paris.dream.pojo.User-->
+    <select id="selectUserById" parameterType="int" resultMap="userMap">
+        select * from user where id=#{id}
+    </select>
+
+    <select id="selectAllUser" resultMap="userMap">
+        select * from user
+    </select>
+
+
+</mapper>
