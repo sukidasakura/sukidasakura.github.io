@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--通过bean配置的方式织入切面-->
+    <!--1.目标bean-->
+    <bean id="waiter" class="com.paris.dream.aspectjaop.simpleexample.NativeWaiter" />
+    <!--2.使用了@AspectJ注解的切面类-->
+    <bean class="com.paris.dream.aspectjaop.simpleexample.PreGreetingAspect" />
+    <!--3.自动创建代理器，自动将@AspectJ注解切面类织入到目标bean中-->
+    <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator" />
+
+</beans>

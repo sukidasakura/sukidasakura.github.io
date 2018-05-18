@@ -27,9 +27,12 @@ public class ControllablePerformanceMonitor
     public Object invoke(MethodInvocation mi) throws Throwable {
         Object obj = null;
         if (MonitorStatusMap.get() != null && MonitorStatusMap.get()){
+            // 拦截前
             PerformanceMonitor.begin(mi.getClass().getName() + "."
                     + mi.getMethod().getName());
+
             obj = super.invoke(mi);
+            //拦截后
             PerformanceMonitor.end();
         } else {
             obj = super.invoke(mi);

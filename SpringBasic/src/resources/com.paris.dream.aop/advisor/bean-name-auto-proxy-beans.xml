@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--static-method-pointcut-beans.xml中，通过配置两个ProxyBeanFactory创建代理对er象。
+现在用BeanNameAutoProxyCreator以更便捷的方式完成相同的功能-->
+
+    <bean id="waiter" class="com.paris.dream.aop.advisor.staticmethod.Waiter" />
+    <bean id="seller" class="com.paris.dream.aop.advisor.staticmethod.Seller" />
+    <bean id="greetingAdvice" class="com.paris.dream.aop.advisor.staticmethod.GreetingBeforeAdvice" />
+
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator"
+          p:beanNames="*er"
+          p:interceptorNames="greetingAdvice"
+          p:optimize="true" />
+    <!--p:beanNames="*er"
+    由于只有一个bean名称，所以直接使用属性进行配置，可以通过<list>子元素设置多个Bean名称，
+    或通过逗号、空格、分别的方式设定多个bean名称-->
+
+    <!--beanNames属性允许用户指定一组需要自动代理的bean名称，可以使用*通配符。
+    interceptorNames属性指定一个或多个增强bean的名称。
+    -->
+
+
+
+</beans>

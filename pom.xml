@@ -17,7 +17,6 @@
         <module>SparkStreaming</module>
         <module>AADocs</module>
         <module>SpringBasic</module>
-        <module>Supconit</module>
         <module>Mybatis</module>
     </modules>
     <!--<dependencies>

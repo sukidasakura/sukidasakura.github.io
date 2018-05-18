@@ -10,3 +10,4 @@ spark-warehouse/
 ~$*.xlsx
 reply*.log
 hs*.log
+Mybatis/logs/
