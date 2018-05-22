@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--
   Created by IntelliJ IDEA.
   User: Mashencai
@@ -29,7 +29,7 @@
                 <td><input type="text" name="realName" /></td>
             </tr>
             <tr>
-                <td colspan="2"><input type="text" name="提交" /></td>
+                <td colspan="2"><input type="submit" name="提交" /></td>
             </tr>
         </table>
     </form>

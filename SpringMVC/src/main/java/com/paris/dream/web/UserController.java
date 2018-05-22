@@ -34,7 +34,7 @@ public class UserController {
     }
 
     // 这里不能忘了"/"符号！！
-    @RequestMapping("/register")
+    @RequestMapping(value = "/register", method = RequestMethod.GET, params = "!myParam")
     public String register() {
         // 返回一个String类型的逻辑视图名，将由视图解析器解析为一个具体的视图对象。
         // 在本例中，被映射为WEB-INF/views/user/register.jsp
