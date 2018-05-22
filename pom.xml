@@ -18,6 +18,7 @@
         <module>AADocs</module>
         <module>SpringBasic</module>
         <module>Mybatis</module>
+        <module>SpringMVC</module>
     </modules>
     <!--<dependencies>
         <dependency>

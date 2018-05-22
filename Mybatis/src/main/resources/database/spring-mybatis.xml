@@ -10,7 +10,7 @@
     <!-- 自动扫描 -->
     <!-- 指定具体包名，只指定到com.paris.dream时，出现如下报错：
     @Autowired:[Could not autowire field:]-->
-    <context:component-scan base-package="com.paris.dream.dao"/>
+    <context:component-scan base-package="com.paris.dream.dao"/><!-- 用于扫描包下所有注解-->
     <context:component-scan base-package="com.paris.dream.service"/>
 
     <!-- 引入配置文件 -->

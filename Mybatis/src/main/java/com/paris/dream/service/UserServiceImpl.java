@@ -13,11 +13,10 @@ import javax.annotation.Resource;
  * Created by Mashencai on 2018/5/18.
  */
 
-@Service("userService")
+@Service("userService") // 装配一个bean
 public class UserServiceImpl implements UserService {
 
-//    @Autowired
-//    @Resource
+    @Resource // 注入一个bean
     private UserDao userDao;
 
     @Override

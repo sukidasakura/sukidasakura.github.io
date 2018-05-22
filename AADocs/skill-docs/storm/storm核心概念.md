@@ -1,0 +1,12 @@
+水龙头和后面水管组成的拓补图就是一个Storm应用（Topology），其中的水龙头是Spout，用来源源不断地读取消息并发送出去，水管的每一个接口就是Bolt，通过Storm的分组策略转发消息流。
+
+Storm 的集群表面上看和Hadoop的非常像，但是在Hadoop上运行的是MapReduce的作业（job），而在Storm上运行的是是Topology，Storm和Hadoop一个非常关键的区别是Hadoop的MapReduce作业最终会结束，而Storm的Topology会一直运行（除非显示的杀掉它）
+
+如果说批处理的Hadoop需要一桶一桶地搬走水，那么Storm 就好比自来水水管，只要预先接好水管，然后打开水龙头，水就源源不断地流出来了，即消息就会被实时地处理。
+
+
+Topology：Storm中运行的一个实时应用程序的名称。（拓扑） 
+Spout：在一个topology中获取源数据流的组件。通常情况下spout会从外部数据源中读取数据，然后转换为topology内部的源数据。参见Spout示意图 
+Bolt：接受数据然后执行处理的组件,用户可以在其中执行自己想要的操作。参见Bolt示意图 
+Tuple：消息发送的最下单元，是一个Tuple对象，对象有个List 
+Stream：源源不断地Tuple组成了Stream（表示数据的流向） 
