@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-<!-- 需要在File-Project Structure-Modules-Dependencies中添加Tomcat的依赖，否则会报：
-'org.springframework.web.servlet.DispatcherServlet' is not assignable to 'javax.servlet.Servlet-->
+    <!-- 需要在File-Project Structure-Modules-Dependencies中添加Tomcat的依赖，否则会报：
+    'org.springframework.web.servlet.DispatcherServlet' is not assignable to 'javax.servlet.Servlet-->
 
     <!-- 初始化Spring的xml配置文件-->
     <context-param>
@@ -21,11 +21,13 @@
 
 
     <!-- 默认加载名为<servlet-name>-servlet.xml的Spring配置文件，启动web层的Spring容器 -->
-  <servlet>
-    <servlet-name>smart</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
+    <servlet>
+        <servlet-name>smart</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+        <!-- springmvc的异步支持 -->
+        <async-supported>true</async-supported>
+    </servlet>
 
     <!-- 表示拦截的模式 -->
     <!-- 指定DispatcherServlet处理url-pattern的http请求（即所有匹配的请求都会被DispatcherServlet截获并处理） -->
@@ -33,5 +35,5 @@
         <servlet-name>smart</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-  
+
 </web-app>
