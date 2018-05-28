@@ -1,11 +1,44 @@
 ## Linux基本命令
 
+#### 查看linux时间
+date
+
+#### 查看运行进程所在目录
+ps -ef | grep xxx
+
+#### mysql安装
+1. rpm -qa | grep mysql 查看Mysql是否安装
+2. Mysql rpm包安装顺序：
+common -> libs -> clients -> server
+3. 安装好后，检查是否存在Mysql的配置文件
+ls /etc/my.cnf
+
+或者有没有Mysql的命令在/usr/bin下
+cd /usr/bin/
+ls | grep mysql
+4. 启动Mysql
+/etc/init.d/mysqld start  
+ps aux | grep mysqld
+5. mysql rpm安装的初始密码
+cat /var/log/mysqld.log | grep 'temporary password'
+6. mysql -uroot -p
+输入密码登录mysql后修改密码：
+set password=password('supconit')
+
+
+#### 查看linux系统版本信息。
+lsb_release -a 
+
 ####vim行号的显示与隐藏
 :set nu
 :set nonu
 
-####安装rpm安装包
- rpm -ivh  rmp文件
+#### rpm相关
+ rpm -ivh  rmp文件 安装rpm
+ rpm -e rpm文件 卸载rpm
+ rpm -e rpm文件 --nodeps 不管依赖关系，强制卸载。
+ rpm -q xxx 查找rpm包
+ rpm -qa|grep libtirpc 查找是否已经有libtirpc这个rmp包
 
 #### 修改脚本格式为linux格式 
 set ff=unix

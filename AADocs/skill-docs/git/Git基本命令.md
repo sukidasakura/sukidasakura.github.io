@@ -1,5 +1,11 @@
 ## Git基本命令
 
+#### 撤销所有本地未提交的修改
+git clean -df
+只删除所有untracked的文件，如果文件已经被tracked，修改过的文件不会被回退。
+git reset --hard
+把tracked的文件revert到前一个版本，对于untracked的文件都不会被删除。
+
 #### 查看不同
 git diff   比较文件
 git log -p   比较提交
