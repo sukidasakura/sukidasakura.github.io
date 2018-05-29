@@ -10,4 +10,17 @@ yarn WebUI
 hdfs namenode WebUI
 端口：50070
 
-18081
+18080
+
+
+http://master:50070/dfshealth.html#tab-overview 
+
+http://workeri:50070/dfshealth.html#tab-overview 
+
+http://master:8088/cluster 
+
+http://master:8088/proxy/application_1527504854379_0012/SQL/ 
+
+http://master:60010/master-status 
+
+http://workeri:60010/master-status 
