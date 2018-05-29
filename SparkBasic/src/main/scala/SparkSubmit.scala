@@ -21,6 +21,7 @@ object SparkSubmit {
       val y = x.reduceByKey((pre, after) => pre + after)
       y.cache() //添加缓存，测试storage的使用
       y.collect().foreach{println(_)}
+      Thread.sleep(10 * 1000)
     }
   }
 }
