@@ -11,3 +11,5 @@ spark-warehouse/
 reply*.log
 hs*.log
 Mybatis/logs/
+*/*/*/*/META-INF/
+classes
