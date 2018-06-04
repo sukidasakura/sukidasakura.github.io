@@ -14,7 +14,7 @@ object StreamingDemo {
 		// 使用该 context, 创建一个代表从 TCP 源流数据的离散流（DStream）,
 		// 连接到 hostname:port 的 DStream，如 localhost:9999
 		// 开启端口的方法：nc -lk 9999
-		val lines = ssc.socketTextStream("114.115.204.171", 9999)
+		val lines = ssc.socketTextStream("10.10.99.38", 9999)
 
 		// 在这个离散流（DStream）中的每一条记录都是一行文本（text）.
 		// 我们想要通过空格字符（space characters）拆分这些数据行（lines）成单词（words）.

@@ -15,6 +15,11 @@ hdfs namenode WebUI
 18080
 
 
+华为云服务器
+master 114.116.22.235
+workⅡ 114.116.21.76
+workⅠ 114.115.204.171
+
 http://master:50070/dfshealth.html#tab-overview 
 
 http://workeri:50070/dfshealth.html#tab-overview 

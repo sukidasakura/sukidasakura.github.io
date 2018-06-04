@@ -16,4 +16,8 @@
 ```
 
 #### 查看当前Kafka集群中Topic的情况  
-    bin/kafka-topics.sh --list --zookeeper 172.18.18.163:2181
+    bin/kafka-topics.sh --list --zookeeper 10.10.77.136:2181
+    
+#### 查看对应topic的描述信息
+    ./kafka-topics.sh --describe --zookeeper 10.10.77.136:2181 --topic test
+
