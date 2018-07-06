@@ -7,14 +7,15 @@ object StreamingDemo {
 	def main(args: Array[String]): Unit = {
 		// 创建一个具有两个工作线程（working thread）并且批次间隔为 x 秒的本地 StreamingContext .
 		// master 需要 2 个核, 以防止饥饿情况（starvation scenario）.
-		val conf = new SparkConf().setMaster("local[2]").setAppName("NetworkWordCount")
-				.set("spark.testing.memory", "2147480000")
-		val ssc = new StreamingContext(conf, Durations.seconds(10))
+		val conf = new SparkConf().setAppName("SparkStreaming")
+			.setMaster("local[*]") //提交到yarn-cluster时，这句要注释掉，否则会一直accepted
+//				.set("spark.testing.memory", "2147480000")
+		val ssc = new StreamingContext(conf, Durations.seconds(1 * 60))
 
 		// 使用该 context, 创建一个代表从 TCP 源流数据的离散流（DStream）,
 		// 连接到 hostname:port 的 DStream，如 localhost:9999
 		// 开启端口的方法：nc -lk 9999
-		val lines = ssc.socketTextStream("10.10.99.38", 9999)
+		val lines = ssc.socketTextStream("114.115.204.171", 9999)
 
 		// 在这个离散流（DStream）中的每一条记录都是一行文本（text）.
 		// 我们想要通过空格字符（space characters）拆分这些数据行（lines）成单词（words）.

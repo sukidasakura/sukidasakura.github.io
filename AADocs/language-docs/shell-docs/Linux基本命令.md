@@ -1,5 +1,8 @@
 ## Linux基本命令
 
+#### 回到行首
+ctrl + A
+
 #### 查看linux时间
 date
 
@@ -148,6 +151,9 @@ ps axu | grep rados
 1）ps a 显示现行终端机下的所有程序，包括其他用户的程序。  
 2）ps x 　 显示所有程序，不以终端机来区分。  
 3）ps u 　 以用户为主的格式来显示程序状况。  
+
+#### root用户切换hadoop用户
+su hadoop
 
 #### data用户切换root用户
 sudo su  

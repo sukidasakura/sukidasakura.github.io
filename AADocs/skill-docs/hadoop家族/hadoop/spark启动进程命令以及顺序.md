@@ -49,5 +49,6 @@ Slave2节点
 
 
 提交任务
-spark-submit --master spark://localhost:7077  --class StreamingDemo /home/mashencai/sparkstreaming.jar
+spark-submit --master spark://localhost:7077  --class StreamingDemo /user/mashencai/spark/sparkstreaming.jar
 
+spark-submit --master yarn --deploy-mode client  --class StreamingDemo /user/mashencai/spark/sparkstreaming.jar
