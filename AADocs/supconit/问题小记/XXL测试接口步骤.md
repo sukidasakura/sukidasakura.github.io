@@ -1,0 +1,24 @@
+1.创建服务
+	URL:
+		http://IP:PORT/data_control_web/ambari/service/createService
+	参数：
+		serviceName
+	协议：
+		POST
+2.设置参数
+	URL：
+		http://IP:PORT/data_control_web/ambari/service/setConfigs
+	参数：
+		serviceName
+	协议：
+		POST
+3.安装组件
+	URL：
+		http://IP:PORT/monitoring_web/ambari/service/installComponent
+	参数：
+		serviceName
+		hostName
+		componentName
+	协议：
+		POST
+4.启动组件
