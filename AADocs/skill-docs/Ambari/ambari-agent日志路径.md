@@ -1,0 +1,1 @@
+/var/log/ambari-agent

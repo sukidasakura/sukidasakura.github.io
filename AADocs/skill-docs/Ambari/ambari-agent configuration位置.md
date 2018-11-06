@@ -1,0 +1,1 @@
+/var/lib/ambari-agent/cache/cluster_configuration

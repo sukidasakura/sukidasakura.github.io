@@ -1,5 +1,16 @@
 ## Linux基本命令
 
+#### 查看进程信息
+ps aux | grep ZeppelinServer
+```
+root     13774  2.0  2.9 4148308 477340 ?      Sl   09:17   0:12 /home/jdk1.8.0_111/bin/java -Dspark.executor.memory=512m -Dspark.executor.instances=2 -Dspark.yarn.queue=default -Dfile.encoding=UTF-8 -Xms1024m -Xmx1024m -XX:MaxPermSize=512m -Dlog4j.configuration=file:///usr/hdp/current/zeppelin/conf/log4j.properties -Dzeppelin.log.file=/usr/hdp/current/zeppelin/logs/zeppelin-root-data137.log -cp :.:/usr/hdp/current/jdk/lib/tools.jar:/usr/hdp/current/jdk/lib/dt.jar:/usr/hdp/current/zeppelin/lib/interpreter/*:/usr/hdp/current/zeppelin/lib/*:/usr/hdp/current/zeppelin/*::/usr/hdp/current/zeppelin/conf:/etc/hadoop/conf org.apache.zeppelin.server.ZeppelinServer
+root     18009  0.0  0.0 103260   872 pts/102  S+   09:27   0:00 grep ZeppelinServer
+```
+
+#### 查看进程权限
+ps -ef | grep ZeppelinServer
+
+
 #### 回到行首
 ctrl + A
 
@@ -71,6 +82,9 @@ lsof -i:2121
 #### 解压
 tar -xf RealTimeCompare.tar.gz -C RealTimeCompare/
 
+#### 解压时去除目录结构解压到指定目录
+tar -xf zeppelin-0.8.0-bin-all.tgz --strip-components=1
+
 #### 压缩
 tar -czf XXX.tar.gz XXX
 
@@ -115,6 +129,9 @@ unzip filename.zip
 
 #### 在当前目录查找以 .log 结尾的文件。
 find . -name "*.log" 
+
+#### 显示/var/lib/ambari-server目录下的文件（包含子目录）包含install_packages的行
+grep -r install_packages /var/lib/ambari-server
 
 #### 查找目录下的所有文件中是否含有某个字符串 
 find .|xargs grep -ri "zookeeper.log" 

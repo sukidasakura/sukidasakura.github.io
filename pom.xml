@@ -19,6 +19,7 @@
         <module>SpringBasic</module>
         <module>Mybatis</module>
         <module>SpringMVC</module>
+        <module>Quartz</module>
     </modules>
     <!--<dependencies>
         <dependency>
