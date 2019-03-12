@@ -169,12 +169,21 @@ ps axu | grep rados
 2）ps x 　 显示所有程序，不以终端机来区分。  
 3）ps u 　 以用户为主的格式来显示程序状况。  
 
+#### 查看Linux所有用户信息
+cat /etc/password
+
 #### root用户切换hadoop用户
 su hadoop
 
 #### data用户切换root用户
+exit
+
 sudo su  
 如有需要再输入密码
+
+#### 修改文件权限
+chown -R gpadmin /usr/local/greenplum-db
+chgrp -R gpadmin /usr/local/greenplum-db
 
 #### shell 判断变量中是否包含某个字符串
 str="this is a string"  

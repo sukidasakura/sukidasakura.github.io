@@ -26,7 +26,8 @@ git clone -b v2.8.1 https://git.oschina.net/oschina/android-app.git
     mvn dependency:tree
     查看依赖中有scala的部分
     mvn dependency:tree | grep scala
-
+#### mvn 打包某一模块的包
+    mvn clean install -pl presto-elasticsearch -am -Dmaven.test.skip=true
 
 #### 本地新建项目，推送到远程库
     1，在远程库建立同名的仓库

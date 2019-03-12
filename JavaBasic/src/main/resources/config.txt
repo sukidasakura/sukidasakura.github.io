@@ -1,0 +1,72 @@
+{
+  "href" : "http://10.10.77.138:8080/api/v1/clusters/hdpCluster/configurations/service_config_versions?is_current=true&service_name=ZEPPELIN_TEST",
+  "items" : [
+    {
+      "href" : "http://10.10.77.138:8080/api/v1/clusters/hdpCluster/configurations/service_config_versions?service_name=ZEPPELIN_TEST&service_config_version=1",
+      "cluster_name" : "hdpCluster",
+      "configurations" : [
+        {
+          "Config" : {
+            "cluster_name" : "hdpCluster",
+            "stack_id" : "HDP-2.6"
+          },
+          "type" : "zeppelin-config",
+          "tag" : "version1543823151837",
+          "version" : 33,
+          "properties" : {
+            "zeppelin_base_dir" : "/usr/hdp/current/zeppelin",
+            "zeppelin_group" : "zeppelin",
+            "zeppelin_log_dir" : "/usr/hdp/current/zeppelin/logs",
+            "zeppelin_pid_dir" : "/var/run/zeppelin",
+            "zeppelin_user" : "zeppelin"
+          },
+          "properties_attributes" : { }
+        },
+        {
+          "Config" : {
+            "cluster_name" : "hdpCluster",
+            "stack_id" : "HDP-2.6"
+          },
+          "type" : "zeppelin-env",
+          "tag" : "version1543823151837",
+          "version" : 33,
+          "properties" : {
+            "HADOOP_CONF_DIR" : "/etc/hadoop/conf",
+            "JAVA_HOME" : "/home/jdk1.8.0_111",
+            "MASTER" : "yarn-client",
+            "PYTHONPATH" : "\"${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.8.2.1-src.zip\"",
+            "SPARK_HOME" : "/usr/hdp/current/spark2-client",
+            "SPARK_YARN_USER_ENV" : "\"PYTHONPATH=${PYTHONPATH}\""
+          },
+          "properties_attributes" : { }
+        },
+        {
+          "Config" : {
+            "cluster_name" : "hdpCluster",
+            "stack_id" : "HDP-2.6"
+          },
+          "type" : "zeppelin-site",
+          "tag" : "version1543823151837",
+          "version" : 29,
+          "properties" : {
+            "interpreter_group_order" : "spark,md,angular,sh,livy,alluxio,file,psql,flink,python,ignite,lens,cassandra,geode,kylin,elasticsearch,scalding,jdbc,hbase,bigquery,beam,groovy",
+            "server_port" : "9995",
+            "server_ssl_port" : "yarn-client"
+          },
+          "properties_attributes" : { }
+        }
+      ],
+      "createtime" : 1543823216125,
+      "group_id" : -1,
+      "group_name" : "Default",
+      "hosts" : [ ],
+      "is_cluster_compatible" : true,
+      "is_current" : true,
+      "service_config_version" : 1,
+      "service_config_version_note" : "Initial configurations for zeppelin",
+      "service_name" : "ZEPPELIN_TEST",
+      "stack_id" : "HDP-2.6",
+      "user" : "admin"
+    }
+  ]
+}

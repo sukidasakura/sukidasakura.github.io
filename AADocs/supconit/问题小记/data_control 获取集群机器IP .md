@@ -1,5 +1,4 @@
 原生：
-http://10.10.77.138:8080/api/v1/clusters/hdpCluster/components?fields=host_components/HostRoles/display_name%EF%BC%8Chost_components/HostRoles/host_name&ServiceComponentInfo/service_name=HDFS
 
 http://10.10.77.138:8080/api/v1/clusters/hdpCluster/components?fields=host_components/HostRoles/display_name，host_components/HostRoles/host_name&ServiceComponentInfo/service_name=HDFS
 
