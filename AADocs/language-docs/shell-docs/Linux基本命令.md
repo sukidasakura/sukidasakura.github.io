@@ -1,5 +1,34 @@
 ## Linux基本命令
 
+#### 配置免密登录
+在data138上，执行
+ssh-copy-id 10.10.77.137（ambari-agent的节点）
+
+#### 启停mysql
+10.10.77.143
+su mysql
+/usr/local/mysql/bin
+启动命令：./mysqld --user=mysql
+修改配置：
+/etc/my.cnf
+
+service mysqld restart
+
+/usr/local/mysql/bin/mysqld --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data --plugin-dir=/usr/local/mysql/lib/plugin --user=mysql --log-error=/usr/local/mysql/data/data143.err --pid-file=/usr/local/mysql/data/data143.pid --socket=/tmp/mysql.sock --port=3306
+
+/bin/sh /usr/local/mysql/bin/mysqld_safe --datadir=/usr/local/mysql/data --pid-file=/usr/local/mysql/data/data143.pid
+
+#### 查找包含指定内容的文件
+grep '指定内容' -r 目录
+grep 'postgresql' -r /usr/local/greenplum-db
+指定内容为postgresql
+-r 递归查找文件
+
+
+#### dos转unix文件格式
+vim 编辑器 输入  
+:set ff=unix
+
 #### 查看进程信息
 ps aux | grep ZeppelinServer
 ```

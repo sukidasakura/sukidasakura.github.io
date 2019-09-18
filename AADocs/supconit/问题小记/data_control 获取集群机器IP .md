@@ -19,3 +19,6 @@ http://10.10.77.135:8090/data_control_web/ambari/host/getHostsList?pageNo=1&page
 
 
 http://10.10.77.135:8090/data_control_web/ambari/service/getSummaryOfService?serviceName=XXL_JOB
+
+获取flink在ambari上的配置：
+http://10.10.77.138:8080/api/v1/clusters/hdpCluster/configurations/service_config_versions?is_current=true&service_name=FLINK
