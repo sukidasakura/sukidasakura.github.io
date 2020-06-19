@@ -20,6 +20,8 @@
         <module>Mybatis</module>
         <module>SpringMVC</module>
         <module>Quartz</module>
+        <module>Hive</module>
+        <module>supcon</module>
     </modules>
     <!--<dependencies>
         <dependency>

@@ -1,7 +1,31 @@
 ## Linux基本命令
 
+
+
+linux 查找带有某关键字的文件
+grep -r "{关键字}"  {路径}
+例如：
+grep -r "test"  /data/reports
+
+1、
+find / -name '*' | xargs grep 'route'
+
+在根文件夹下查找含有关键字route的文件，列出文件名和route所在行。
+
+2、
+find / -name '*.txt' | xargs grep 'route'
+
+在根文件夹下查找后缀名为txt且含有关键字route的文件，列出文件名和route所在行。
+
+
+
+#### 重启防火墙
+systemctl disable firewalld
+service  iptables stop
+chkconfig iptables off
 #### 配置免密登录
-在data138上，执行
+1. ssh-keygen -t rsa 生成密钥
+2. 在data138上，执行
 ssh-copy-id 10.10.77.137（ambari-agent的节点）
 
 #### 启停mysql
@@ -213,6 +237,8 @@ sudo su
 #### 修改文件权限
 chown -R gpadmin /usr/local/greenplum-db
 chgrp -R gpadmin /usr/local/greenplum-db
+
+chown -R hadoop:hadoop hdfs-2.7.7/
 
 #### shell 判断变量中是否包含某个字符串
 str="this is a string"  
